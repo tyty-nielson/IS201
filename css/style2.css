@@ -1,0 +1,124 @@
+/* GOOGLE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* GLOBAL STYLES */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000; /* black background */
+    color: #fff;            /* white text */
+    text-align: center;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: #111;
+    padding: 15px 20px;
+    text-align: center;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: #0d6efd;
+}
+
+/* HERO SECTION */
+.hero-section {
+    position: relative;
+    height: 300px;       /* visible header height */
+    overflow: hidden;    /* crop image */
+}
+
+.hero-img {
+    width: 100%;
+    height: 400px;       /* taller than container for cropping */
+    object-fit: cover;
+    object-position: center top; /* align image to the top */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-shadow: 0 0 15px rgba(0,0,0,0.7);
+    max-width: 90%;
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    margin: 0;
+}
+
+.hero-text p {
+    font-size: 1.3rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* MAIN CONTENT */
+section {
+    padding: 60px 20px;
+    background-color: #000; /* black background */
+    color: #fff;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: #0d6efd; /* accent color */
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE TEXT */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+    .hero-text p {
+        font-size: 1rem;
+    }
+}
+
+/* ---------------------------------------- */
+/* FIXED + CLEAN ADDED VIDEO CSS (WORKS NOW)*/
+/* ---------------------------------------- */
+
+/* CINEMATIC WIDE VIDEO */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    aspect-ratio: 16/9; /* automatically keeps ratio */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    background: #000;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+
+
