@@ -18,16 +18,16 @@
         <a href="notes.html">Notes</a>
     </nav>
 
-    <!-- HEADER IMAGE -->
+    <!-- HERO SECTION -->
     <div class="hero-section">
-        <img src="Images/IMG_3642.jpeg" alt="Personal Header" class="hero-img">
+        <img src="images/IMG_3642.jpeg" alt="Personal Header" class="hero-img">
         <div class="hero-text">
             <h1>Welcome to My Page</h1>
-            <p>A modern, clean, personal space just for me.</p>
+            <p>A Whole Page About Random Things</p>
         </div>
     </div>
 
-    <!-- MAIN CONTENT -->
+    <!-- ABOUT SECTION -->
     <section>
         <h2>About This Page</h2>
         <p>
@@ -36,16 +36,73 @@
         </p>
     </section>
 
-    <!-- VIDEO -->
-    <div class="video-container">
-        <iframe
-            referrerpolicy="strict-origin-when-cross-origin"
-            src="https://www.youtube-nocookie.com/embed/H9cmPE88a_0"
-            title="Embedded video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-        </iframe>
-    </div>
+    <!-- HIGHLIGHT REEL -->
+    <section id="reel">
+
+        <!-- SECTION HEADER -->
+        <div class="video-section">
+            <a href="#Tableau">Jump to Tableau</a>
+            <h2>Highlight Reel</h2>
+            <p class="video-subtitle">A short look at some of my favorite work.</p>
+        </div>
+
+        <!-- WIDE TABLEAU -->
+        <div class="tableau-wrapper" id="Tableau">
+            <div class="tableauPlaceholder" id="viz1765755058340" style="position: relative;">
+                <noscript>
+                    <a href="#">
+                        <img
+                            alt="Final Campaign Analysis"
+                            src="https://public.tableau.com/static/images/He/HersheysNewProductLaunchDashboard/FinalCampaignAnalysis/1_rss.png"
+                            style="border: none;"
+                        />
+                    </a>
+                </noscript>
+
+                <object class="tableauViz" style="display:none;">
+                    <param name="host_url" value="https://public.tableau.com/" />
+                    <param name="embed_code_version" value="3" />
+                    <param name="site_root" value="" />
+                    <param name="name" value="HersheysNewProductLaunchDashboard/FinalCampaignAnalysis" />
+                    <param name="tabs" value="no" />
+                    <param name="toolbar" value="yes" />
+                    <param name="language" value="en-US" />
+                </object>
+            </div>
+        </div>
+
+        <!-- TABLEAU SCRIPT -->
+        <script type="text/javascript">
+            var divElement = document.getElementById("viz1765755058340");
+            var vizElement = divElement.getElementsByTagName("object")[0];
+
+            vizElement.style.width = "100%";
+            vizElement.style.height = "950px";
+
+            var scriptElement = document.createElement("script");
+            scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        </script>
+
+        <!-- VIDEO -->
+        <div class="video-section">
+            <div class="video-container">
+                <iframe
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    src="https://www.youtube-nocookie.com/embed/p1I2HqXIMRo"
+                    title="Embedded video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 My Personal Page</p>
+    </footer>
 
 </body>
 </html>
