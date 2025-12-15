@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chocolate Mood</title>
+
+<style>
+:root {
+    --bg: linear-gradient(135deg, #1a0f0a, #2d1a14);
+    --card: #111;
+    --accent: #c2410c;
+    --text: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+}
+
+.app {
+    background: var(--card);
+    padding: 2.5rem;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    animation: popIn 0.6s ease;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+}
+
+.subtitle {
+    opacity: 0.7;
+    margin-bottom: 2rem;
+}
+
+.emoji {
+    font-size: 4rem;
+    margin: 1.5rem 0;
+    transition: transform 0.3s ease;
+}
+
+input[type="range"] {
+    width: 100%;
+    appearance: none;
+    height: 10px;
+    border-radius: 999px;
+    background: #222;
+    outline: none;
+    margin: 1.5rem 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(194,65,12,0.8);
+}
+
+.mood-text {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    min-height: 1.5em;
+}
+
+button {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(194,65,12,0.6);
+}
+
+footer {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    opacity: 0.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+    <h1>🍫 Chocolate Mood</h1>
+    <p class="subtitle">How much do you love chocolate?</p>
+
+    <div class="emoji" id="emoji">🙂</div>
+
+    <input type="range" min="0" max="100" value="50" id="slider">
+
+    <div class="mood-text" id="moodText">
+        Chocolate neutral 🤷
+    </div>
+
+    <button onclick="submitMood()">Submit Mood</button>
+
+    <footer>Made with ❤️ and cocoa</footer>
+</div>
+
+<script>
+const slider = document.getElementById("slider");
+const emoji = document.getElementById("emoji");
+const moodText = document.getElementById("moodText");
+
+function updateMood(value) {
+    emoji.style.transform = "scale(1.2)";
+    setTimeout(() => emoji.style.transform = "scale(1)", 200);
+
+    if (value < 20) {
+        emoji.textContent = "😐";
+        moodText.textContent = "Not really into chocolate.";
+    } else if (value < 40) {
+        emoji.textContent = "🙂";
+        moodText.textContent = "Chocolate is okay.";
+    } else if (value < 70) {
+        emoji.textContent = "😋";
+        moodText.textContent = "Chocolate makes life better.";
+    } else if (value < 90) {
+        emoji.textContent = "😍";
+        moodText.textContent = "Absolutely love chocolate!";
+    } else {
+        emoji.textContent = "🤎";
+        moodText.textContent = "Chocolate is my personality.";
+    }
+}
+
+slider.addEventListener("input", e => {
+    updateMood(e.target.value);
+});
+
+function submitMood() {
+    alert("Your chocolate mood has been saved 🍫✨");
+}
+</script>
+
+</body>
+</html>
